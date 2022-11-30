@@ -1,0 +1,18 @@
+.company-name {
+  color: rgb(65, 65, 65);
+  list-style: none;
+  width: 60%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+}
+.company-name li {
+  margin: 1em 0;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0.5EM 1EM;
+  border: 1PX SOLID rgb(255, 255, 255);
+  background-color: rgb(226, 226, 226);
+  font-weight: 700;
+}/*# sourceMappingURL=index.module.css.map */
