@@ -7,11 +7,11 @@ import React, { useEffect, useState } from 'react'
 
 
 
+let user = []
 
 
 function stats() {
     let router = useRouter()
-    let user = []
 console.log(router.query.stats, user)
     let [stats,setstats] =  useState()
 
@@ -27,18 +27,19 @@ console.log(router.query.stats, user)
    let res = await fetch(`https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/${router.query.stats}`, options)
    let data = await (await res).json()
 
-   Array.from({length:10}).forEach(()=>{
-    user.push(data)
+   Array.from({length:1}).forEach(()=>{
+   return user.push(data)
    })
-
+   setstats(user)
   }
+useEffect(()=>{
   fetching()
-  useEffect(()=>{
-     setstats(user)
-  })
+ console.log(user)
+})
+
 
   return (
-    <div>{user}</div>
+    <div></div>
   )
 }
 
