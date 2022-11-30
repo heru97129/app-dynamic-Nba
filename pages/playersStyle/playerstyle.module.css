@@ -1,0 +1,61 @@
+.players-container {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.players-container__card {
+  color: rgba(0, 0, 0, 0.837);
+  width: 95%;
+  background-color: #e4e4e4;
+  margin: 2em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.players-container__card ul {
+  margin: 0 auto;
+  list-style: none;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 10px;
+}
+
+.players-container__card ul li {
+  text-align: left;
+  margin: 1em 0;
+  letter-spacing: .07em;
+  padding: 0 .5em;
+  font-weight: 600;
+}
+
+.players-container__card ul li:nth-child(1) span {
+  font-weight: 700;
+  color: #d93030;
+}
+
+.players-container__card ul li:nth-child(2) span {
+  font-weight: 700;
+  color: #d93030;
+}
+
+.players-container__card ul li:nth-child(6) span {
+  font-weight: 700;
+  color: #baaf1a;
+}
+
+.players-container__card ul li:nth-child(7) span {
+  font-weight: 700;
+  color: #10a13e;
+}
+
+.players-container__card ul li:nth-child(8) span {
+  font-weight: 700;
+  color: #10a13e;
+}
+/*# sourceMappingURL=playerstyle.module.css.map */
