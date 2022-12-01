@@ -1,0 +1,10 @@
+.stats-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+.stats-container__card ul {
+  list-style: none;
+}/*# sourceMappingURL=statsstyle.module.css.map */

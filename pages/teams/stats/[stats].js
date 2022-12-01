@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
+import styles from '../../statsStyle/statsstyle.module.scss'
 
 
 
@@ -8,14 +9,19 @@ import React, { useEffect, useState } from 'react'
 
 
 let user = []
-
+let id = null
 
 function stats() {
     let router = useRouter()
-console.log(router.query.stats, user)
+
     let [stats,setstats] =  useState()
 
-  async function fetching(){
+ 
+
+useEffect(()=>{
+ 
+  console.log(router.query.stats)
+id = router.query.stats
     const options = {
         method: 'GET',
         headers: {
@@ -24,22 +30,46 @@ console.log(router.query.stats, user)
         }
     };
     
-   let res = await fetch(`https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/${router.query.stats}`, options)
-   let data = await (await res).json()
-
-   Array.from({length:1}).forEach(()=>{
-   return user.push(data)
-   })
-   setstats(user)
-  }
-useEffect(()=>{
-  fetching()
- console.log(user)
-})
+   fetch(`https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/${id}`, options)
+   .then(res => res.json())
+   .then( response =>  setstats(response))
 
 
+
+},[id])
+console.log(stats)
   return (
-    <div></div>
+    <div className={styles['stats-container']}>
+      {stats && stats.api.statistics.map((stats,i)=>{
+      return (
+        <div className={styles['stats-container__card']}>
+        <ul key={stats.gameId}>
+            <li>
+           GameId: {stats.gameId}
+          </li>
+          <li>
+           Point: {stats.points}
+          </li>
+          <li>
+           Assist: {stats.assists}
+          </li>
+          <li>
+           Minutes: {stats.min}
+          </li>
+          <li>
+           Steals: {stats.steals}
+          </li>
+          <li>
+           Turnovers: {stats.turnovers}
+          </li>
+          <li>
+           Blocks: {stats.blocks}
+          </li>
+        </ul>
+        </div>
+
+      )
+    })}</div>
   )
 }
 

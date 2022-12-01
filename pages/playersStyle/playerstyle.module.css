@@ -1,14 +1,14 @@
 .players-container {
-  width: 95%;
-  margin: 0 auto;
+  width: 45%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-
 .players-container__card {
   color: rgba(0, 0, 0, 0.837);
-  width: 95%;
-  background-color: #e4e4e4;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(228, 228, 228);
   margin: 2em 1em;
   display: flex;
   justify-content: center;
@@ -16,7 +16,6 @@
   padding: 1em;
   border-radius: 10px;
 }
-
 .players-container__card ul {
   margin: 0 auto;
   list-style: none;
@@ -25,37 +24,30 @@
   grid-template-columns: repeat(2, 1fr);
   border-radius: 10px;
 }
-
 .players-container__card ul li {
   text-align: left;
   margin: 1em 0;
-  letter-spacing: .07em;
-  padding: 0 .5em;
+  letter-spacing: 0.07em;
+  padding: 0 0.5em;
   font-weight: 600;
 }
-
 .players-container__card ul li:nth-child(1) span {
   font-weight: 700;
-  color: #d93030;
+  color: rgb(217, 48, 48);
 }
-
 .players-container__card ul li:nth-child(2) span {
   font-weight: 700;
-  color: #d93030;
+  color: rgb(217, 48, 48);
 }
-
 .players-container__card ul li:nth-child(6) span {
   font-weight: 700;
-  color: #baaf1a;
+  color: rgb(186, 175, 26);
 }
-
 .players-container__card ul li:nth-child(7) span {
   font-weight: 700;
-  color: #10a13e;
+  color: rgb(16, 161, 62);
 }
-
 .players-container__card ul li:nth-child(8) span {
   font-weight: 700;
-  color: #10a13e;
-}
-/*# sourceMappingURL=playerstyle.module.css.map */
+  color: rgb(16, 161, 62);
+}/*# sourceMappingURL=playerstyle.module.css.map */

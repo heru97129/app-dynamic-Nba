@@ -1,12 +1,12 @@
 .players-container{
    
-    width: 95%;
-    margin: 0 auto;
+    width: 45%;
+    
      display: grid;
      grid-template-columns: repeat(3,1fr);
     &__card{
         color: rgba(0, 0, 0, 0.837);
-        width: 95%;
+        width: fit-content;
         background-color: rgb(228, 228, 228);
         margin:2em 1em;
         display: flex;
