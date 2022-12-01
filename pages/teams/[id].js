@@ -105,14 +105,14 @@ const Details = ({players}) => {
                                         HeightInMeters:
                                         <span>
                                             {player.heightInMeters}
-                                            meter
+                                              meter
                                         </span>
                                     </li>
                                     <li>
                                         WeightInKilograms:
                                         <span>
                                             {player.weightInKilograms}
-                                            kilos
+                                              kilos
                                         </span>
                                     </li>
 
