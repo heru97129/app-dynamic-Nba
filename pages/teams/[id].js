@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import * as React from 'react';
 import {useEffect} from 'react';
 import styles from '../playersStyle/playerstyle.module.scss'
+import Layout from '../../Components/layout/Layout.js';
 
 export async function getStaticPaths() {
     const options = {
@@ -61,6 +62,8 @@ const Details = ({players}) => {
     // console.log(el)   }) }) console.log(players.api)
 
     return (
+        <>
+        <Layout>
         <div className={styles['players-container']}>
             {players
                 .api
@@ -119,11 +122,14 @@ const Details = ({players}) => {
                                 </ul>
                             </Link>
                         </div>
+                        
                     )
                 })
 }
 
         </div>
+        </Layout>
+        </>
     );
 }
 

@@ -1,0 +1,28 @@
+.container-home{
+    width: 100%;
+    background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0a151a, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    justify-content: flex-end;
+    padding: 8em 0 0 0;
+    min-height: 88VH;
+    position: relative;
+    &__image{
+        position: absolute ;
+        bottom: 0;
+        left: 10%;
+    }
+
+    &__text{
+        width: 800px;
+        margin-right: 7em;
+        h1{
+            
+            font-size: 3em;
+
+        }
+    }
+
+}

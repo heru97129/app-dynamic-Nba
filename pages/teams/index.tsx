@@ -4,6 +4,7 @@ import { faker } from '@faker-js/faker';
 import { useEffect,useState } from 'react';
 import styles from '../indexStyle/index.module.scss'
 import Link from 'next/link';
+import Layout from '../../Components/layout/Layout.js';
 
 
 
@@ -12,6 +13,8 @@ const Index = ({posts}) => {
 console.log(posts)
 
   return (
+    <>
+    <Layout >
     <div className={styles['company-name']}>
   
        {posts.api.teams.map((team: string ,i:Number) =>{
@@ -36,6 +39,8 @@ console.log(posts)
        )}
  
     </div>
+    </Layout>
+    </>
   );
 };
 
