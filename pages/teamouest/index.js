@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
-import { faker } from '@faker-js/faker';
-import { useEffect,useState } from 'react';
+
 import styles from '../indexStyle/index.module.scss'
 import Link from 'next/link';
 import Layout from '../../Components/layout/Layout.js';
@@ -16,17 +15,17 @@ console.log(posts)
     <>
     <Layout >
       <div className={styles['container-team']}>
-        <div className={styles['container-team__banner']}>
-         <h1>Teams Conference Est</h1>
+      <div className={styles['container-team__banner']}>
+         <h1>Teams Conference West</h1>
         </div>
        <div className={styles['container-team__company-name']}>
   
-       {posts.api.teams.map((team: string ,i:Number) =>{
+       {posts.api.teams.slice(0,16).map((team ,i) =>{
           if((team.city != "Home") && (team.city != 'Away') && (team.city != 'USA') && (team.city != 'World')&& (team.city != 'Team')){
 
       return <div className={styles['container-team__company-name__card']} key={`${team.teamId}`}>
          <ul >
-       <Link href={`/teams/${team.teamId}`} key={`${team.teamId}`}>
+       <Link href={`/teamouest/${team.teamId}`} key={`${team.teamId}`}>
           
          <li>{team.city} </li>
          <li><img src={team.logo ? team.logo : null} alt="logo" /></li>
@@ -61,7 +60,7 @@ export async function getStaticProps() {
     }
   };
   
- let res = await fetch('https://api-nba-v1.p.rapidapi.com/teams/confName/east', options)
+ let res = await fetch('https://api-nba-v1.p.rapidapi.com/teams/confName/west', options)
 
     const posts =  await res.json()
   

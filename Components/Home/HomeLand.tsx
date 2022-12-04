@@ -14,6 +14,9 @@ export default function HomeLand({}) {
      <div className={styles['container-home__text']}>
         <h1>THE NBA OFFICIEL DATA SERVICES <br /> FACT CHECKING LIKE YOU <br /> NEVER SEEN BEFORE</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sit voluptates repudiandae officiis quo? Culpa, impedit accusantium minima, iure provident quidem ducimus et illum totam laborum amet alias laboriosam blanditiis?</p>
+      <div className={styles['container-home__btn']}>
+        <button>Subscribe</button>
+      </div>
      </div> 
 
      </div>

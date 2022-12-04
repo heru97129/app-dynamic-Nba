@@ -1,18 +1,86 @@
-.company-name {
-  color: rgb(65, 65, 65);
-  list-style: none;
-  width: 60%;
-  margin: 0 auto;
-  display: grid;
-  gap: 2em;
-  grid-template-columns: repeat(2, 1fr);
+.container-team {
+  padding: 0em 0 5em 0;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-.company-name li {
+
+.container-team__banner {
+  width: 100%;
+  position: relative;
+  padding: 16em 0;
+  text-align: center;
+  background-color: black;
+  z-index: 74;
+  margin-bottom: 5em;
+}
+
+.container-team__banner h1 {
+  font-size: 7em;
+}
+
+.container-team__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/NBA-Teams.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  opacity: .4;
+  mix-blend-mode: unset;
+}
+
+.container-team__company-name {
+  color: #414141;
+  list-style: none;
+  width: 80%;
+  margin: 1em auto;
+  display: grid;
+  gap: 3em;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 2em;
+}
+
+.container-team__company-name__card {
+  width: 380px;
+  background-color: rgba(255, 255, 255, 0.582);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5em 0;
+}
+
+.container-team__company-name__card ul {
+  list-style: none;
+  padding: .5em 0;
+  background-color: white;
+  color: #1c1c1c;
+  box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.container-team__company-name__card ul li {
+  text-align: center;
   margin: 1em 0;
   border-radius: 10px;
   width: 100%;
-  padding: 0.5EM 1EM;
-  border: 1PX SOLID rgb(255, 255, 255);
-  background-color: rgb(226, 226, 226);
+  padding: 0.2EM 1.5EM;
   font-weight: 700;
-}/*# sourceMappingURL=index.module.css.map */
+}
+
+.container-team__company-name__card ul li:nth-child(1) {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 1.7em;
+  color: #cd3333;
+}
+
+.container-team__company-name__card ul li img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 1em;
+}
+/*# sourceMappingURL=index.module.css.map */

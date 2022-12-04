@@ -1,54 +1,116 @@
 .players-container {
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.players-container__banner {
+  width: 100%;
+  position: relative;
+  padding: 12em 0;
+  text-align: center;
+  background-color: black;
+  z-index: 74;
+}
+
+.players-container__banner h1 {
+  font-size: 10em;
+  mix-blend-mode: unset;
+}
+
+.players-container__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/nbaplayer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  opacity: .4;
+}
+
+.players-container__grid {
+  margin: 4em 0;
+  width: 75%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  z-index: 454454;
 }
+
 .players-container__card {
+  position: relative;
+  z-index: 4544;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   color: rgba(0, 0, 0, 0.837);
-  background-color: rgb(228, 228, 228);
+  background-color: #e4e4e4;
   margin: 2em 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 2em 1em;
   border-radius: 10px;
 }
+
+.players-container__card .jersey {
+  color: rgba(255, 0, 0, 0.104);
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, 15%);
+  font-size: 8em;
+  z-index: 1;
+}
+
 .players-container__card ul {
   margin: 0 auto;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 10px;
+  gap: .5em;
+  padding: 1em 0;
 }
+
 .players-container__card ul li {
   text-align: left;
   margin: 1em 0;
-  letter-spacing: 0.07em;
-  padding: 0 0.5em;
+  letter-spacing: .07em;
+  padding: 0 .5em;
   font-weight: 700;
 }
+
 .players-container__card ul li span {
   font-weight: 500;
-  margin-left: 0.5em;
+  margin-left: .5em;
 }
+
 .players-container__card ul li:nth-child(1) span {
   font-weight: 700;
-  color: rgb(217, 48, 48);
+  color: #d93030;
 }
+
 .players-container__card ul li:nth-child(2) span {
   font-weight: 700;
-  color: rgb(217, 48, 48);
+  color: #d93030;
 }
+
 .players-container__card ul li:nth-child(6) span {
   font-weight: 700;
-  color: rgb(186, 175, 26);
+  color: #baaf1a;
 }
+
 .players-container__card ul li:nth-child(7) span {
   font-weight: 700;
-  color: rgb(16, 161, 62);
+  color: #10a13e;
 }
+
 .players-container__card ul li:nth-child(8) span {
   font-weight: 700;
-  color: rgb(16, 161, 62);
-}/*# sourceMappingURL=playerstyle.module.css.map */
+  color: #10a13e;
+}
+/*# sourceMappingURL=playerstyle.module.css.map */

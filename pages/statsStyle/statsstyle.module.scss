@@ -1,12 +1,50 @@
 .stats-container{
-   width: 80%;
+   width: 100%;
+  position: relative;
    margin: 0 auto;
-   display: grid;
-   grid-template-columns: repeat(4,1fr);
-   gap: 1em;
-    &__card{
-     
-        ul{
+   display: flex;
+   justify-content: center;
+
+    &__tableau{
+     position: relative;
+     border-collapse: separate;
+     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+     border-spacing: 0  .1px ;
+     border-radius: 15px;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+     thead{
+        text-align: left;
+        border-radius: 20px;
+   
+
+     }
+    th{
+        padding:1.5em 25px;
+color: rgba(0, 0, 0, 0.54);
+&:nth-child(1){
+    color: rgb(99, 107, 219) ;
+}
+        background-color: rgba(72, 72, 72, 0.179);
+
+     }
+     tbody{
+        
+     }
+     tr{
+        &:nth-child(even){
+            background-color: rgba(172, 171, 171, 0.063);
+        }
+     }
+     td{
+
+        text-align: center;
+        color: rgba(0, 0, 0, 0.745);
+        padding: 1em 0;
+ 
+
+     }
+margin:5em 0 ; 
+       ul{
             list-style: none;
         }
     }

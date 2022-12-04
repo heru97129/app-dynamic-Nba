@@ -1,8 +1,6 @@
 // @flow
 import Link from 'next/link';
-import {useRouter} from 'next/router';
 import * as React from 'react';
-import {useEffect} from 'react';
 import styles from '../playersStyle/playerstyle.module.scss'
 import Layout from '../../Components/layout/Layout.js';
 
@@ -15,7 +13,7 @@ export async function getStaticPaths() {
         }
     };
 
-    let res = await fetch('https://api-nba-v1.p.rapidapi.com/teams/confName/east', options)
+    let res = await fetch('https://api-nba-v1.p.rapidapi.com/teams/confName/west', options)
 
     const data = await res.json()
     let paths = data
@@ -43,7 +41,7 @@ export async function getStaticProps(context) {
             'X-RapidAPI-Key': 'b1de66cc69msh11c5a4b83787fbcp1a0636jsn3eb920355c84',
             'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
         }
-    };
+    }; 
     console.log(id)
 
     const res = fetch(`https://api-nba-v1.p.rapidapi.com/players/teamId/${id}`, options)

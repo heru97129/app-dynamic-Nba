@@ -2,17 +2,21 @@
 
 .menu-container{
     padding: .7em 1em;
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, #2c2c2c 0%, #0a0a0ab7 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
     
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.225);
-
       &__logo{
         margin-left: 3em;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        svg{
+          width: 100% !important;
+          height: 70px !important;
+        }
       }
     &__pages{
         ul{

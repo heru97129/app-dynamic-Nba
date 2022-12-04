@@ -1,28 +1,55 @@
-.container-home{
+.container-home {
     width: 100%;
-    background: #0F2027;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0a151a, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+    color: #1e222e;
     display: flex;
     justify-content: flex-end;
-    padding: 8em 0 0 0;
+    padding: 8em 0 0;
     min-height: 88VH;
     position: relative;
-    &__image{
-        position: absolute ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    &__image {
+        position: absolute;
         bottom: 0;
         left: 10%;
-    }
+        img {
+            mix-blend-mode: unset;
 
-    &__text{
-        width: 800px;
-        margin-right: 7em;
-        h1{
-            
-            font-size: 3em;
+            min-height: 700px;
 
         }
+    }
+
+    &__text {
+        margin-top: 2em;
+        width: 800px;
+        margin-right: 7em;
+        h1 {
+
+            font-size: 3.5em;
+            line-height: 1.2em;
+            font-weight: bolder;
+
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8em;
+        }
+    }
+
+    &__btn {
+        margin: 2em 0;
+        button {
+            padding: 1em 3em;
+            font-size: 1.3em;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(114.44deg, #1e222e 0%, #2C5364 100%);
+            border-radius: 16px;
+            border: none;
+        }
+
     }
 
 }
