@@ -1,0 +1,53 @@
+.container-season {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-season__banner {
+  width: 100%;
+  position: relative;
+  padding: 6em 0;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  z-index: 74;
+}
+.container-season__banner h1 {
+  font-size: 10em;
+  mix-blend-mode: unset;
+}
+.container-season__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/NBA_season.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.4;
+}
+.container-season__Seasons {
+  padding: 3em 0;
+}
+.container-season__Seasons ul {
+  display: flex;
+  list-style: none;
+  border-radius: 10px;
+}
+.container-season__Seasons ul li {
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1em;
+  border: 1px solid rgb(27, 27, 27);
+  background-color: rgb(255, 140, 58);
+  color: rgb(255, 255, 255);
+}
+.container-season__Seasons ul li:hover {
+  background-color: rgba(255, 140, 58, 0.735);
+  color: rgb(6, 6, 6);
+}/*# sourceMappingURL=seasonstyle.module.css.map */

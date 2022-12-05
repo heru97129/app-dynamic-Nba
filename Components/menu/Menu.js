@@ -31,8 +31,9 @@ export default function Menu({}) {
 
                     <li>Conference West</li>
                     </Link>
-
+                    <Link href={'/seasons'} key={'sesons'}>
                     <li>Seasons</li>
+                    </Link>
 
                 </ul>
             </div>

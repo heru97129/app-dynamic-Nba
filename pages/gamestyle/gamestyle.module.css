@@ -10,13 +10,14 @@
   width: 60%;
   border: 1px solid black;
   background-color: white;
-  padding: 2em;
+  padding: 0em;
 }
 .container-game__location {
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
-  background-color: rgba(235, 235, 235, 0.736);
+  background-color: rgba(0, 0, 0, 0.736);
+  color: white;
 }
 .container-game__location h2 {
   margin: 0.2em 0;
@@ -24,6 +25,7 @@
 .container-game__status {
   display: flex;
   height: 80%;
+  padding-top: 2em;
 }
 .container-game__status .loser {
   width: 100%;
