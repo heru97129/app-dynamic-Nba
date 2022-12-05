@@ -1,10 +1,9 @@
 
-import Link from 'next/link';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import * as React from 'react';
-import {useEffect,useState} from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../../../../Components/layout/Layout.js';
-
+import styles from '../../../gamestyle/gamestyle.module.scss'
 
 let id = null
 const Details = () => {
@@ -30,13 +29,73 @@ const Details = () => {
             .then(response => setgame(response))
 
     }, [id])
- console.log(game)
+    console.log(game)
 
     return (
         <>
-        <Layout>
+            <Layout>
+                <div className={styles['container-game']}>
+                    <div className={styles['container-game__card']}>
 
-        </Layout>
+                        {game && game.api.games.map(game => (
+                            <>
+                                <div className={styles['container-game__location']}>
+                                     <h2>{game.city}</h2>
+                                     <h2>{game.arena}</h2>
+                                     <h2>{game.endTimeUTC.substring(0,10)}</h2>
+                                </div>
+                                <div className={styles['container-game__status']}>
+                                    <div className={styles['loser']}>
+                                        <div className={styles['team']}>
+                                            <h2>
+                                                {game.hTeam.fullName}
+                                            </h2>
+                                            <div className={styles['logo_score']}>
+                                                <div>
+                                                 <img src={game.hTeam.logo} />
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                            <div>
+                                               <h2>
+                                               {game.hTeam.shortName}
+                                               </h2>
+                                            </div>
+                                        </div>
+                                        <div className={styles['score']}>
+                                                    {game.hTeam.score.points}
+                                    </div>
+                                    </div>
+                                    <div className={styles['winner']}>
+                                    <div className={styles['team']}>
+                                            <h2>
+                                                {game.vTeam.fullName}
+                                            </h2>
+                                            <div className={styles['logo_score']}>
+                                                <div>
+                                                 <img src={game.vTeam.logo} />
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                            <div>
+                                               <h2>
+                                               {game.vTeam.shortName}
+                                               </h2>
+                                            </div>
+                                        </div>
+                                        <div className={styles['score']}>
+                                                    {game.vTeam.score.points}
+                                       </div>
+                                    </div>
+                                </div>
+                            </>
+                        ))}
+
+                    </div>
+                </div>
+            </Layout>
         </>
     );
 }

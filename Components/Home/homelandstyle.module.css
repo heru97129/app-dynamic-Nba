@@ -4,44 +4,37 @@
   color: #1e222e;
   display: flex;
   justify-content: flex-end;
-  padding: 8em 0 0;
+  padding: 9em 0 0;
   min-height: 88VH;
   position: relative;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-
 .container-home__image {
   position: absolute;
-  bottom: 0;
+  bottom: -9px;
   left: 10%;
 }
-
 .container-home__image img {
   mix-blend-mode: unset;
   min-height: 700px;
 }
-
 .container-home__text {
   margin-top: 2em;
   width: 800px;
   margin-right: 7em;
 }
-
 .container-home__text h1 {
   font-size: 3.5em;
   line-height: 1.2em;
   font-weight: bolder;
 }
-
 .container-home__text p {
   font-size: 1.2em;
   line-height: 1.8em;
 }
-
 .container-home__btn {
   margin: 2em 0;
 }
-
 .container-home__btn button {
   padding: 1em 3em;
   font-size: 1.3em;
@@ -51,5 +44,4 @@
   background: linear-gradient(114.44deg, #1e222e 0%, #2C5364 100%);
   border-radius: 16px;
   border: none;
-}
-/*# sourceMappingURL=homelandstyle.module.css.map */
+}/*# sourceMappingURL=homelandstyle.module.css.map */

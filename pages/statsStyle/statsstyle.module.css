@@ -5,43 +5,35 @@
   display: flex;
   justify-content: center;
 }
-
 .stats-container__tableau {
   position: relative;
   border-collapse: separate;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-  border-spacing: 0  .1px;
+  border-spacing: 0 0.1px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   margin: 5em 0;
 }
-
 .stats-container__tableau thead {
   text-align: left;
   border-radius: 20px;
 }
-
 .stats-container__tableau th {
   padding: 1.5em 25px;
   color: rgba(0, 0, 0, 0.54);
   background-color: rgba(72, 72, 72, 0.179);
 }
-
 .stats-container__tableau th:nth-child(1) {
-  color: #636bdb;
+  color: rgb(99, 107, 219);
 }
-
 .stats-container__tableau tr:nth-child(even) {
   background-color: rgba(172, 171, 171, 0.063);
 }
-
 .stats-container__tableau td {
   text-align: center;
   color: rgba(0, 0, 0, 0.745);
   padding: 1em 0;
 }
-
 .stats-container__tableau ul {
   list-style: none;
-}
-/*# sourceMappingURL=statsstyle.module.css.map */
+}/*# sourceMappingURL=statsstyle.module.css.map */
