@@ -5,10 +5,35 @@ import { useEffect,useState } from 'react';
 import styles from '../indexStyle/index.module.scss'
 import Link from 'next/link';
 import Layout from '../../Components/layout/Layout.js';
+import { NULL } from 'sass';
+
+type data = {
+
+    city : String,
+    teamId : String,
+    fullName:String,
+    nickname :String,
+    leagues: {
+      standard :{
+        confName:String,
+        divName:String
+      }
+    }
+    logo:string,
 
 
+}
 
-const Index = ({posts}) => {
+type Team = {
+  posts : {api :{
+    teams:[data]
+  }},
+
+  
+
+}
+
+const Index = ({posts} : Team) => {
 
 console.log(posts)
 
@@ -21,7 +46,7 @@ console.log(posts)
         </div>
        <div className={styles['container-team__company-name']}>
   
-       {posts.api.teams.map((team: string ,i:Number) =>{
+       {posts.api.teams.map((team) =>{
           if((team.city != "Home") && (team.city != 'Away') && (team.city != 'USA') && (team.city != 'World')&& (team.city != 'Team')){
 
       return <div className={styles['container-team__company-name__card']} key={`${team.teamId}`}>
@@ -29,7 +54,7 @@ console.log(posts)
        <Link href={`/teams/${team.teamId}`} key={`${team.teamId}`}>
           
          <li>{team.city} </li>
-         <li><img src={team.logo ? team.logo : null} alt="logo" /></li>
+         <li><img src={team.logo} alt="logo" /></li>
          <li>fullName : {team.fullName}</li>
          <li>NickName : {team.nickname}</li>
          <li>Conference: {team.leagues.standard.confName}</li>

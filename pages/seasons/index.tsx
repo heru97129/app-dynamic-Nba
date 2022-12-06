@@ -6,12 +6,18 @@ import Layout from '../../Components/layout/Layout';
 import Link from 'next/link';
 
 
+type Seasons ={
+  posts :{
+    api :{
+      seasons : []
+  }
+  }
+  
+}
 
-const Index = ({posts}) => {
 
-posts.api.seasons.map(el =>{
-    console.log(el)
-})
+const Index = ({posts} : Seasons) => {
+
 
   return (
     <>
@@ -24,11 +30,11 @@ posts.api.seasons.map(el =>{
             <div className={styles['all-seas']}>
             <ul>
 
-                {posts.api.seasons.map((season,i) =>{
+                {posts.api.seasons.map((season : String) =>{
                     return( 
                     <>
                     <Link href={`/seasons/allgame/${season}`} key={`${season}`}> 
-                     <li key={season}>
+                     <li >
                             {season}
                     </li> 
                     </Link>

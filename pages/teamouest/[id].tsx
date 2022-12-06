@@ -4,6 +4,38 @@ import * as React from 'react';
 import styles from '../playersStyle/playerstyle.module.scss'
 import Layout from '../../Components/layout/Layout.js';
 
+type data = {
+
+    playerId : React.Key,
+    firstName: String,
+    lastName:String,
+    collegeName :String,
+    leagues: {
+      standard :{
+        jersey:String,
+
+      }
+    }
+    affiliation:string,
+    startNba:string,
+    heightInMeters:string,
+    dateOfBirth:string,
+    weightInKilograms:String
+
+}
+
+type Team = {
+  players : {api :{
+    players:[data]
+  }},
+
+  
+
+}
+
+
+
+
 export async function getStaticPaths() {
     const options = {
         method: 'GET',
@@ -19,7 +51,7 @@ export async function getStaticPaths() {
     let paths = data
         .api
         .teams
-        .map((team) => {
+        .map((team: { teamId: { toString: () => any; }; }) => {
             return {
                 params: {
                     id: team
@@ -33,7 +65,7 @@ export async function getStaticPaths() {
 
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: { params: { id: any; }; }) {
     const id = context.params.id
     const options = {
         method: 'GET',
@@ -54,7 +86,7 @@ export async function getStaticProps(context) {
     }
 }
 
-const Details = ({players}) => {
+const Details = ({players} : Team) => {
 
  console.log(players)
 
@@ -69,7 +101,7 @@ const Details = ({players}) => {
             {players
                 .api
                 .players
-                .map(player => {
+                .map((player) => {
                     return (
                         <div className={styles['players-container__card']} key={player.playerId}>
                             <div className={styles['jersey']}>

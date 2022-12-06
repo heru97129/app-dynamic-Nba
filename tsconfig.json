@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/teams/[id].js", "pages/teams/[id].js", "pages/teams/stats/[stats].js", "pages/teams/stats/[stats].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/teams/[id].tsx", "pages/teams/[id].tsx",pages/teams/stats/[stats].tsxtsx"pages/teams/stats/[stats].tsx.tsx"],
   "exclude": ["node_modules"]
 }

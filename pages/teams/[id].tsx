@@ -5,6 +5,37 @@ import * as React from 'react';
 import {useEffect} from 'react';
 import styles from '../playersStyle/playerstyle.module.scss'
 import Layout from '../../Components/layout/Layout.js';
+import { type } from 'os';
+
+type data = {
+    collegeName : String,
+    lastName : String,
+    playerId:React.Key,
+    firstName :String,
+    dateOfBirth : String,
+    heightInMeters : String,
+    affiliation:String,
+    startNba :String,
+    weightInKilograms :String,
+    leagues: {
+      standard :{
+        jersey:String,
+        divName:String
+      }
+    }
+}
+
+type player = {
+    players : {
+        api :{
+            players :  [data]
+        }
+    }
+}
+type Props ={
+    teamId: String;
+    team :Object
+}
 
 export async function getStaticPaths() {
     const options = {
@@ -21,7 +52,7 @@ export async function getStaticPaths() {
     let paths = data
         .api
         .teams
-        .map((team) => {
+        .map((team : Props) => {
             return {
                 params: {
                     id: team
@@ -35,7 +66,7 @@ export async function getStaticPaths() {
 
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: { params: { id: any; }; }) {
     const id = context.params.id
     const options = {
         method: 'GET',
@@ -56,7 +87,7 @@ export async function getStaticProps(context) {
     }
 }
 
-const Details = ({players}) => {
+const Details = ({players} : player) => {
 
  console.log(players)
 
@@ -71,7 +102,7 @@ const Details = ({players}) => {
             {players
                 .api
                 .players
-                .map(player => {
+                .map((player)=> {
                     return (
                         <div className={styles['players-container__card']} key={player.playerId}>
                             <div className={styles['jersey']}>

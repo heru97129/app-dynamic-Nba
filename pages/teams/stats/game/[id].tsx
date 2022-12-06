@@ -1,16 +1,51 @@
 
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { ImgHTMLAttributes, useEffect, useState } from 'react';
 import Layout from '../../../../Components/layout/Layout.js';
 import styles from '../../../gamestyle/gamestyle.module.scss'
 
-let id = null
+type DataGame ={
+    city : String,
+    arena : String
+    endTimeUTC : String
+    hTeam:{
+        fullName:String
+        shortName:String
+        logo : string
+
+        score:{
+            points:String
+        }
+    }
+    vTeam:{
+        fullName:String
+        shortName:String
+        logo : string
+
+        score:{
+            points:String
+        }
+    }
+    
+}
+
+type Game = {
+     api :{
+        games:[DataGame]
+     }
+}
+
+
+
+
+
+let id : unknown = null
 const Details = () => {
     let router = useRouter()
 
     let [game,
-        setgame] = useState()
+        setgame] = useState<Game>()
 
     useEffect(() => {
 

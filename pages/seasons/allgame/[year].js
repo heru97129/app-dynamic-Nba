@@ -52,7 +52,7 @@ export async function getStaticProps(context) {
     }
 }
 const Details = ({season_game}) => {
-    let game = []
+let game = []
 
  season_game.api.games.map(gamet=>{
        

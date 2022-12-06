@@ -4,14 +4,53 @@ import styles from '../../statsStyle/statsstyle.module.scss'
 import Layout from '../../../Components/layout/Layout.js'
 import Link from 'next/link';
 
-let user = []
-let id = null
+type data = {
+    gameId: React.Key,
+    assists:String,
+    min:String,
+    steals:String,
+    turnovers:String,
+    blocks:String,
+    plusMinus:String, 
+    tpa:String,
+    points:String, 
+    tpm:String,
+    tpp:String,
+    defReb:String,
+    fga:String,
+    fgm:String,
+    fgp:String,
+    fta:String,
+    ftm:String,
+    ftp:String
+
+ 
+}
+
+// type args ={
+//     stats : [data]
+// }
+
+type stats = {
+    api:{
+        statistics : [data]
+    }
+}
+
+
+
+
+
+
+
+
+let id: unknown = null
 
 function stats() {
     let router = useRouter()
 
     let [stats,
-        setstats] = useState()
+        setstats] = useState<stats>()
 
     useEffect(() => {
 
@@ -63,7 +102,7 @@ function stats() {
                     {stats && stats
                         .api
                         .statistics
-                        .map((stats, i) => {
+                        .map((stats  ) => {
                             return (
                                 <tr key={stats.gameId}>
 

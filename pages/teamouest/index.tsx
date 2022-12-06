@@ -5,9 +5,34 @@ import styles from '../indexStyle/index.module.scss'
 import Link from 'next/link';
 import Layout from '../../Components/layout/Layout.js';
 
+type dataWest = {
+
+  city : String,
+  teamId : String,
+  fullName:String,
+  nickname :String,
+  leagues: {
+    standard :{
+      confName:String,
+      divName:String
+    }
+  }
+  logo:string,
 
 
-const Index = ({posts}) => {
+}
+
+type TeamWest = {
+posts : {api :{
+  teams:[dataWest]
+}},
+
+
+
+}
+
+
+const Index = ({posts}: TeamWest) => {
 
 console.log(posts)
 
@@ -28,7 +53,7 @@ console.log(posts)
        <Link href={`/teamouest/${team.teamId}`} key={`${team.teamId}`}>
           
          <li>{team.city} </li>
-         <li><img src={team.logo ? team.logo : null} alt="logo" /></li>
+         <li><img src={team.logo} alt="logo" /></li>
          <li>fullName : {team.fullName}</li>
          <li>NickName : {team.nickname}</li>
          <li>Conference: {team.leagues.standard.confName}</li>
