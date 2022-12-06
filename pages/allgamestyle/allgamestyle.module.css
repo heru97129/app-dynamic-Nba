@@ -1,6 +1,3 @@
-.season_game {
-  background-color: green;
-}
 .season_game__banner {
   width: 100%;
   position: relative;
@@ -25,4 +22,72 @@
   background-size: cover;
   z-index: 1;
   opacity: 0.4;
+}
+.season_game__grid {
+  width: 70%;
+  margin: 0 auto;
+  color: black;
+}
+.season_game__grid .game-card {
+  margin: 3em 0;
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+}
+.season_game__location {
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  background-color: rgba(0, 0, 0, 0.736);
+  color: white;
+}
+.season_game__location h2 {
+  margin: 0.2em 0;
+}
+.season_game__status {
+  display: flex;
+  height: 80%;
+  padding-top: 2em;
+}
+.season_game__status .loser {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 3em;
+  align-items: center;
+}
+.season_game__status .loser .logo_score {
+  display: flex;
+  align-items: center;
+}
+.season_game__status .loser .logo_score img {
+  width: 300px;
+  height: 300px;
+}
+.season_game__status .loser .score {
+  font-size: 5em;
+}
+.season_game__status .winner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 3em;
+  flex-direction: row-reverse;
+}
+.season_game__status .winner .logo_score {
+  display: flex;
+  align-items: center;
+}
+.season_game__status .winner .logo_score img {
+  width: 300px;
+  height: 300px;
+}
+.season_game__status .winner .score {
+  display: flex;
+  align-items: center;
+  font-size: 5em;
 }/*# sourceMappingURL=allgamestyle.module.css.map */

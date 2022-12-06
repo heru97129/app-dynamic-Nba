@@ -51,8 +51,8 @@ export async function getStaticProps(context) {
         }
     }
 }
-let game = []
 const Details = ({season_game}) => {
+    let game = []
 
  season_game.api.games.map(gamet=>{
        
@@ -73,8 +73,70 @@ const Details = ({season_game}) => {
         <div className={styles['season_game__banner']}>
             <h1>ALL GAMES</h1>
         </div>
-         <div className={styles['players-season_game__grid']}>
-  
+         <div className={styles['season_game__grid']}>
+            {
+            game.map(game=>{
+                return(
+                    <>
+                                <div className={styles['game-card']}>
+
+                       <div className={styles['season_game__location']}>
+                                     <h2>{game.city}</h2>
+                                     <h2>{game.arena}</h2>
+                                     <h2>{game.endTimeUTC.substring(0,10)}</h2>
+                                </div>
+                                <div className={styles['season_game__status']}>
+                                    <div className={styles['loser']}>
+                                        <div className={styles['team']}>
+                                            <h2>
+                                                {game.hTeam.fullName}
+                                            </h2>
+                                            <div className={styles['logo_score']}>
+                                                <div>
+                                                 <img src={game.hTeam.logo} />
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                            <div>
+                                               <h2>
+                                               {game.hTeam.shortName}
+                                               </h2>
+                                            </div>
+                                        </div>
+                                        <div className={styles['score']}>
+                                                    {game.hTeam.score.points}
+                                    </div>
+                                    </div>
+                                    <div className={styles['winner']}>
+                                    <div className={styles['team']}>
+                                            <h2>
+                                                {game.vTeam.fullName}
+                                            </h2>
+                                            <div className={styles['logo_score']}>
+                                                <div>
+                                                 <img src={game.vTeam.logo} />
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                            <div>
+                                               <h2>
+                                               {game.vTeam.shortName}
+                                               </h2>
+                                            </div>
+                                        </div>
+                                        <div className={styles['score']}>
+                                                    {game.vTeam.score.points}
+                                       </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                    </>
+                )
+            })
+            }
          </div>
         </div>
         </Layout>
