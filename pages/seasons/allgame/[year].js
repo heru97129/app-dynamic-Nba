@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Layout from '../../../Components/layout/Layout.js';
 import styles from '../../allgamestyle/allgamestyle.module.scss'
+import { useEffect } from 'react';
 
 export async function getStaticPaths() {
     const options = {
@@ -51,20 +52,41 @@ export async function getStaticProps(context) {
         }
     }
 }
+
+let plus = 5
 const Details = ({season_game}) => {
 let game = []
 
- season_game.api.games.map(gamet=>{
+let [addData,setdata] = React.useState(10)
+let [addplus,setplus] = React.useState(10)
+
+function pushData(){
+    season_game.api.games.map(gamet=>{
        
- 
-        game.push(gamet)
+       
+        game.push (gamet)
 
     
  })
- game.length = 100
- console.log(game)
+ game.length = addData
+   console.log(game.length)
 
-//  useEffect({})
+}
+
+pushData()
+
+ useEffect(()=>{
+
+    window.addEventListener('scroll',(e)=>{
+       
+        if ((e.currentTarget.innerHeight + e.currentTarget.pageYOffset) >= document.body.offsetHeight) {
+            setdata(data => data + 5)
+
+            pushData()
+        }
+
+    })
+ },[addData])
 
     return (
         <>
@@ -74,7 +96,7 @@ let game = []
             <h1>ALL GAMES</h1>
         </div>
          <div className={styles['season_game__grid']}>
-            {
+            {game &&
             game.map(game=>{
                 return(
                     <>
