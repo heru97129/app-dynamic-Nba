@@ -5,7 +5,6 @@ import styles from '../playersStyle/playerstyle.module.scss'
 import Layout from '../../Components/layout/Layout.js';
 
 type data = {
-
     playerId : React.Key,
     firstName: String,
     lastName:String,
@@ -33,6 +32,12 @@ type Team = {
 
 }
 
+type ArrayData = {
+   push(player: Object): any;
+   length: number;
+   map(arg0: (player: any) => JSX.Element): React.ReactNode;
+   playersdata : [data]
+}
 
 
 
@@ -87,8 +92,45 @@ export async function getStaticProps(context: { params: { id: any; }; }) {
 }
 
 const Details = ({players} : Team) => {
+let playersdata : ArrayData = []
+console.log(playersdata)
+let [addData,setdata] = React.useState<number>(10)
+function PushData(){
+    players.api.players.map((player : Object)=>{
+       return playersdata.push(player);
+    })
+    if(addData === 10){
+        playersdata.length = 10
 
- console.log(players)
+    }else{
+        playersdata.length = addData
+    }
+
+
+    console.log(playersdata.length)
+
+}
+
+PushData()
+React.useEffect(()=>{
+
+    if(playersdata.length >= 95){
+     console.log('no more players ')
+     return
+    }else{
+        window.addEventListener('scroll',(e : any)=>{
+       
+            if ((e.currentTarget.innerHeight + e.currentTarget.pageYOffset) >= document.body.offsetHeight) {
+                setdata(data => data+ 5)
+
+                PushData()
+            }
+    
+        }) 
+    }
+   
+},[addData])
+
 
     return (
         <>
@@ -98,9 +140,7 @@ const Details = ({players} : Team) => {
             <h1>PLAYERS</h1>
         </div>
        <div className={styles['players-container__grid']}>
-            {players
-                .api
-                .players
+            {playersdata
                 .map((player) => {
                     return (
                         <div className={styles['players-container__card']} key={player.playerId}>
