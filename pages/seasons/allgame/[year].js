@@ -97,10 +97,10 @@ pushData()
         </div>
          <div className={styles['season_game__grid']}>
             {game &&
-            game.map(game=>{
+            game.map((game,i)=>{
                 return(
                     <>
-                                <div className={styles['game-card']}>
+                                <div className={styles['game-card']} key={i}>
 
                        <div className={styles['season_game__location']}>
                                      <h2>{game.city}</h2>
