@@ -99,7 +99,6 @@ pushData()
             {game &&
             game.map((game,i)=>{
                 return(
-                    <>
                                 <div className={styles['game-card']} key={i}>
 
                        <div className={styles['season_game__location']}>
@@ -155,7 +154,6 @@ pushData()
                                 </div>
                                 </div>
 
-                    </>
                 )
             })
             }

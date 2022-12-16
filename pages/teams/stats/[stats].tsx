@@ -48,28 +48,32 @@ let id: unknown = null
 
 function stats() {
     let router = useRouter()
+    id = router.query.stats
 
     let [stats,
         setstats] = useState<stats>()
 
+   function FetchData(){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'b1de66cc69msh11c5a4b83787fbcp1a0636jsn3eb920355c84',
+            'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+        }
+    };
+
+    fetch(`https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/${id}`, options)
+        .then(res => res.json())
+        .then(response => setstats(response))
+   }
+
     useEffect(() => {
+        if(id){
+            FetchData()
 
-        console.log(router.query.stats)
-        id = router.query.stats
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'b1de66cc69msh11c5a4b83787fbcp1a0636jsn3eb920355c84',
-                'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
-            }
-        };
-
-        fetch(`https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/${id}`, options)
-            .then(res => res.json())
-            .then(response => setstats(response))
+        }
 
     }, [id])
-    console.log(stats)
     return ( 
          <> 
     <Layout>
